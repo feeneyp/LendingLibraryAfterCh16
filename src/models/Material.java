@@ -25,15 +25,14 @@ public abstract class Material {
 		this.branch = newBranch;
 	}
 	
-	public boolean lend(Customer customer) {
+	public String lend(Customer customer) {
 		if (borrower == null) {
 			borrower = customer;
-			return true;
+			return "now loaned to " + borrower.getSurname();
 		}
 		else {
-			return false;
+			return "already on loan";
 		}
-		
 	}
 	
 	//must be overridden
